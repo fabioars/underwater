@@ -9,16 +9,6 @@ export const range = (input, output) => (
         output[0] + (value - input[0]) * (output[1] - output[0]) / (input[1] - input[0])
     )
 );
-/**
- *
- * @param {number} min
- * @param {number} max
- */
-export const lerp = (min, max) => (
-    fraction => (
-        (max - min) * fraction + min
-    )
-);
 
 /**
  * FIXME: To use const
@@ -56,4 +46,13 @@ export const random = (min, max) => (
  */
 export const randomInt = (min, max) => (
     Math.floor(random(min, max))
+);
+
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ */
+export const randomGenerator = (min, max) => (
+    () => random(min, max)
 );

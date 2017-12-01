@@ -13,8 +13,7 @@ const config = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: { presets: ['stage-1', 'latest'] }
+                    loader: 'babel-loader'
                 }
             }
         ]
