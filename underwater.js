@@ -1,1 +1,1 @@
-export const print = args => console.log(args)
+export * from './array';
