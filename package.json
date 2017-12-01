@@ -1,18 +1,18 @@
 {
-  "name": "underwater",
-  "version": "1.0.0",
-  "main": "underwater.js",
-  "author": "Fabio Soares <fabioars@live.com>",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "webpack --progress -p -w"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "webpack": "^3.9.1"
-  }
+    "name": "underwater",
+    "version": "1.0.0",
+    "main": "underwater.js",
+    "author": "Fabio Soares <fabioars@live.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "start": "webpack --progress -p -w"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-latest": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "webpack": "^3.9.1"
+    }
 }
