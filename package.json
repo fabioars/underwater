@@ -1,13 +1,14 @@
 {
     "name": "underwater",
     "version": "0.0.1",
-    "main": "underwater.js",
+    "main": "index.js",
     "author": "Fabio Soares <fabioars@live.com>",
     "license": "MIT",
     "private": false,
     "scripts": {
         "start": "webpack --progress -p -w",
-        "test": "jest --verbose"
+        "test": "jest --verbose",
+        "doc": "esdoc"
     },
     "devDependencies": {
         "babel-core": "^6.26.0",
@@ -15,6 +16,8 @@
         "babel-loader": "^7.1.2",
         "babel-preset-latest": "^6.24.1",
         "babel-preset-stage-1": "^6.24.1",
+        "esdoc": "^1.0.4",
+        "esdoc-standard-plugin": "^1.0.0",
         "eslint-plugin-jest": "^21.3.2",
         "jest": "^21.2.1",
         "webpack": "^3.9.1"

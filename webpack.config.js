@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 
 const config = {
-    entry: './underwater.js',
+    entry: './index.js',
     output: {
         path: __dirname,
-        filename: 'underwater.min.js',
+        filename: './dist/underwater.min.js',
         library: '_'
     },
     module: {
