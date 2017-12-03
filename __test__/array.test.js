@@ -27,3 +27,21 @@ test('find and replace a element of array', () => {
 
     expect(result).toEqual([1, 0, 3, 0]);
 });
+
+test('concat 2 array', () => {
+    const array = [1];
+    const other = _.concat(array, [[2]]);
+
+    expect(other).toEqual([1, [2]]);
+    expect(array).toEqual([1]);
+});
+
+test('find position of a element of array', () => {
+    const result1 = _.indexOf(2, [12, 3, 5, 2, 15]);
+    const result2 = _.indexOf(3, [0, 1, 2]);
+    const result3 = _.indexOf(2, [1, 2, 1, 1, 2]);
+
+    expect(result1).toBe(3);
+    expect(result2).toBe(-1);
+    expect(result3).toBe(1);
+});
