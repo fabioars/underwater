@@ -20,6 +20,10 @@ export const push = (item, arr) => (
     [...arr, item]
 );
 
+export const unshift = (item, arr) => (
+    [item, ...arr]
+);
+
 /**
  *
  * @param {array} arr

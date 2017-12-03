@@ -8,6 +8,10 @@ test('adds new elements to the end of an array', () => {
     expect(_.push(0, [1, 2, 3])).toEqual([1, 2, 3, 0]);
 });
 
+test('adds new elements to the begginin of an array', () => {
+    expect(_.unshift(0, [1, 2, 3])).toEqual([0, 1, 2, 3]);
+});
+
 test('remove last element of array', () => {
     expect(_.pop([1, 2, 3, 4])).toEqual([1, 2, 3]);
 });
