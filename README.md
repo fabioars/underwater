@@ -15,8 +15,9 @@ Give us a star on GitHub and share with friends.
 
 ## Getting Started
 
-[CDN] (https://unpkg.com/underwater/dist/underwater.min.js)
-`https://unpkg.com/underwater/dist/underwater.min.js`
+ - CDN - [https://unpkg.com/underwater/dist/underwater.min.js](https://unpkg.com/underwater/dist/underwater.min.js)
+
+
 
 Download npm package
 
