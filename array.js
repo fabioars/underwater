@@ -1,9 +1,9 @@
 
 /**
  *
- * @param {number} i
- * @param {any} item
- * @param {array} arr
+ * @param {number} i index
+ * @param {any} item item that should be placed
+ * @param {array} arr array
  * @returns {array}
  */
 export const set = (i, item, arr) => (
@@ -50,10 +50,20 @@ export const findAndReplace = (arr, item, callback) => (
     })
 );
 
+/**
+ *
+ * @param {array} arr
+ * @param {array} arr2
+ */
 export const concat = (arr, arr2) => (
     [...arr, ...arr2]
 );
 
+/**
+ *
+ * @param {any} item
+ * @param {array} arr
+ */
 export const indexOf = (item, arr) => (
     arr.reduce((v, c, i) => (c === item && v === -1) ?  i : v, -1)
 );
