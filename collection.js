@@ -1,4 +1,8 @@
-
+/**
+ *
+ * @param {array|object} collection
+ * @param {function} callback
+ */
 export const forEach = (collection, callback) => {
     const isArray = collection.isArray && collection.isArray();
     if(isArray){
@@ -12,4 +16,5 @@ export const forEach = (collection, callback) => {
     } else {
         throw new Error(`[forEach] do not support type ${typeof collection}`);
     }
+    return collection;
 };

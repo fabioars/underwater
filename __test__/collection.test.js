@@ -7,17 +7,21 @@ test('for each to object properties', () => {
         c: '3'
     };
 
-    _.forEach(obj, (key, value) => {
-        expect(key).toBeTruthy();
-        expect(value).toBeTruthy();
+    const r = _.forEach(obj, (key, value) => {
+        expect(obj.hasOwnProperty(key)).toBeTruthy();
+        expect(value).toBe(obj[key]);
     });
+
+    expect(r).toEqual(obj);
 });
 
 test('for each a array', () => {
     const arr = [1, 2, 3, 4];
 
-    _.forEach(arr, (key, value) => {
-        expect(key).toBeTruthy();
-        expect(value).toBeTruthy();
+    const r = _.forEach(arr, (key, value) => {
+        expect(parseInt(key)).toBeLessThan(arr.length);
+        expect(value).toBe(arr[key]);
     });
+
+    expect(r).toEqual(arr);
 });

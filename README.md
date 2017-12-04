@@ -1,7 +1,7 @@
 # underwater
 
 ## About
-Lightweight substitute to lodash and underscore.js
+Lightweight ES6+ substitute to lodash and underscore.js
 
 ## Share with friends
 
@@ -16,8 +16,6 @@ Give us a star on GitHub and share with friends.
 ## Getting Started
 
  - CDN - [https://unpkg.com/underwater/dist/underwater.min.js](https://unpkg.com/underwater/dist/underwater.min.js)
-
-
 
 Download npm package
 
