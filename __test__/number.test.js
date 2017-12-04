@@ -44,3 +44,8 @@ test('bezier algorithm', () => {
     expect(b(0.5)).toEqual([1, -0.25, 2]);
     expect(b(1)).toEqual([2, -3, 6]);
 });
+
+test('check if value is in range', () => {
+    expect(_.inRange(5, 0, 10)).toBeTruthy();
+    expect(_.inRange(-5, 0, 10)).toBeFalsy();
+});

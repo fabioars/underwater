@@ -56,3 +56,7 @@ export const randomInt = (min, max) => (
 export const randomGenerator = (min, max) => (
     () => random(min, max)
 );
+
+export const inRange = (value, start, end) => (
+    value >= start && value <= end
+);
