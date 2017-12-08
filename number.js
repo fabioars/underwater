@@ -57,6 +57,13 @@ export const randomGenerator = (min, max) => (
     () => random(min, max)
 );
 
+/**
+ *
+ * @param {number} value
+ * @param {number} start
+ * @param {number} end
+ * @returns {boolean}
+ */
 export const inRange = (value, start, end) => (
     value >= start && value <= end
 );
