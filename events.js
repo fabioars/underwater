@@ -4,7 +4,7 @@ export const createEventManager = () => {
     return {
         events: {},
         register(key, callback) {
-            if(!this.events[key]) {
+            if (!this.events[key]) {
                 this.events[key] = [];
             }
 
@@ -12,8 +12,8 @@ export const createEventManager = () => {
             return this;
         },
         emmit(key, args) {
-            if(!this.events[key]) {
-                console.warn(`[eventManager] there is any event register with the key ${key}`);
+            if (!this.events[key]) {
+                throw new Error(`[eventManager] there is any event register with the key ${key}`);
             }
 
             this.events[key].forEach(event => {

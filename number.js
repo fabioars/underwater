@@ -1,14 +1,11 @@
-
 /**
  *
  * @param {array} input
  * @param {array} output
  */
-export const range = (input, output) => (
-    value => (
-        output[0] + (value - input[0]) * (output[1] - output[0]) / (input[1] - input[0])
-    )
-);
+export const range = (input, output) => value =>
+    output[0] +
+    (value - input[0]) * (output[1] - output[0]) / (input[1] - input[0]);
 
 /**
  * FIXME: To use const
@@ -24,7 +21,7 @@ export const bezier = pts => {
         for (a = pts; a.length > 1; a = b)
             for (i = 0, b = [], j; i < a.length - 1; i++)
                 for (b[i] = [], j = 0; j < a[i].length; j++)
-                    b[i][j] = a[i][j] * (1 - t) + a[i+1][j] * t;
+                    b[i][j] = a[i][j] * (1 - t) + a[i + 1][j] * t;
 
         return a[0];
     };
@@ -35,27 +32,21 @@ export const bezier = pts => {
  * @param {number} min
  * @param {number} max
  */
-export const random = (min, max) => (
-    Math.random() * (max - min) + min
-);
+export const random = (min, max) => Math.random() * (max - min) + min;
 
 /**
  *
  * @param {number} min
  * @param {number} max
  */
-export const randomInt = (min, max) => (
-    Math.floor(random(min, max))
-);
+export const randomInt = (min, max) => Math.floor(random(min, max));
 
 /**
  *
  * @param {number} min
  * @param {number} max
  */
-export const randomGenerator = (min, max) => (
-    () => random(min, max)
-);
+export const randomGenerator = (min, max) => () => random(min, max);
 
 /**
  *
@@ -64,6 +55,4 @@ export const randomGenerator = (min, max) => (
  * @param {number} end
  * @returns {boolean}
  */
-export const inRange = (value, start, end) => (
-    value >= start && value <= end
-);
+export const inRange = (value, start, end) => value >= start && value <= end;

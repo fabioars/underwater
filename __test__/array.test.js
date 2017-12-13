@@ -40,7 +40,6 @@ test('merge 3 array', () => {
     const arr = _.concat([1], [2], [3]);
 
     expect(arr).toEqual([1, 2, 3]);
-
 });
 
 test('find position of a element of array', () => {

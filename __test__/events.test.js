@@ -33,4 +33,3 @@ test('emmit a event with arguments', () => {
 
     e.emmit('my-event', { value: 'the event was called' });
 });
-
