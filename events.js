@@ -11,9 +11,9 @@ export const createEventManager = () => {
             this.events[key] = push(callback, this.events[key]);
             return this;
         },
-        emmit(key, args = undefined) {
+        emmit(key, args) {
             if(!this.events[key]) {
-                throw new Error(`[eventManager] there is any event register with the key ${key}`);
+                console.warn(`[eventManager] there is any event register with the key ${key}`);
             }
 
             this.events[key].forEach(event => {

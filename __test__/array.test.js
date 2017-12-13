@@ -36,6 +36,13 @@ test('concat 2 array', () => {
     expect(array).toEqual([1]);
 });
 
+test('merge 3 array', () => {
+    const arr = _.concat([1], [2], [3]);
+
+    expect(arr).toEqual([1, 2, 3]);
+
+});
+
 test('find position of a element of array', () => {
     const result1 = _.indexOf(2, [12, 3, 5, 2, 15]);
     const result2 = _.indexOf(3, [0, 1, 2]);
@@ -44,4 +51,8 @@ test('find position of a element of array', () => {
     expect(result1).toBe(3);
     expect(result2).toBe(-1);
     expect(result3).toBe(1);
+});
+
+test('difference between arrays', () => {
+    expect(_.difference([1, 2, 3], [1, 2])).toEqual([3]);
 });

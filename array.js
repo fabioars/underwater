@@ -53,10 +53,9 @@ export const findAndReplace = (arr, item, callback) => (
 /**
  *
  * @param {array} arr
- * @param {array} arr2
  */
-export const concat = (arr, arr2) => (
-    [...arr, ...arr2]
+export const concat = (...arr) => (
+    arr.reduce((prev, current) => [...prev, ...current])
 );
 
 /**
@@ -66,4 +65,13 @@ export const concat = (arr, arr2) => (
  */
 export const indexOf = (item, arr) => (
     arr.reduce((v, c, i) => (c === item && v === -1) ?  i : v, -1)
+);
+
+/**
+ *
+ * @param {array} arr
+ * @param {array} values
+ */
+export const difference = (arr, values) => (
+    arr.filter(v => !values.includes(v))
 );
