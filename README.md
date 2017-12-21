@@ -31,7 +31,7 @@ Using CDN
 
 Using Webpack
 
-    import _ from 'underwater';
+    import * as _ from 'underwater';
 
 Using a local reference
 
