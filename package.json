@@ -19,6 +19,8 @@
         "esdoc": "^1.0.4",
         "esdoc-standard-plugin": "^1.0.0",
         "eslint-plugin-jest": "^21.3.2",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^7.0.0",
         "jest": "^21.2.1",
         "webpack": "^3.9.1"
     }
