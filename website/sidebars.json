@@ -1,0 +1,12 @@
+{
+  "docs": {
+    "Getting Started": ["about", "getting-started"],
+    "API": [
+        "api",
+        "array",
+        "collection",
+        "events",
+        "number"
+    ]
+  }
+}

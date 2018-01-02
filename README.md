@@ -1,6 +1,5 @@
 # underwater
 
-## About
 Lightweight ES6+ substitute to lodash and underscore.js
 
 ## Share with friends
