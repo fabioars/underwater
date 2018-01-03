@@ -1,3 +1,5 @@
 node_modules
 .vscode
 *.map
+website/build
+website/build/underwater-gh-pages
