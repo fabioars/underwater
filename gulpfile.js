@@ -1,12 +1,12 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 
-const source = ['./*.js', '!gulpfile.js', '!webpack.*.js'];
+const source = ['./src/*.js', '!gulpfile.js', '!webpack.*.js'];
 
 gulp.task('build', () => {
     return gulp.src(source)
         .pipe(babel())
-        .pipe(gulp.dest('./es5'));
+        .pipe(gulp.dest('./src/es5'));
 });
 
 gulp.task('watch', ['build'], () => {

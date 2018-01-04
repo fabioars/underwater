@@ -1,4 +1,4 @@
-import * as _ from '../events';
+import * as _ from '../src/events';
 
 test('create a event manager', () => {
     const e = _.createEventManager();

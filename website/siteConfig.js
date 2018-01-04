@@ -25,7 +25,7 @@ const siteConfig = {
         { doc: 'about', label: 'Docs' },
         { doc: 'api', label: 'API' },
         { page: 'help', label: 'Help' },
-        { blog: true, label: 'Blog' }
+        // { blog: false, label: 'Blog' }
     ],
     users,
     /* path to images for header/footer */

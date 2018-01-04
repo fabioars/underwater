@@ -1,4 +1,4 @@
-import * as _ from '../number';
+import * as _ from '../src/number';
 
 test('gerate a range function', () => {
     const range = _.range([1, 2], [2, 1]);

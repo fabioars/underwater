@@ -1,4 +1,4 @@
-import * as _ from '../collection';
+import * as _ from '../src/collection';
 
 test('for each to object properties', () => {
     const obj = {

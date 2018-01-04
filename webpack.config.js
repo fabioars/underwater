@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 const config = {
-    entry: './index.js',
+    entry: './src/index.js',
     output: {
         path: __dirname,
         filename: './dist/underwater.min.js',

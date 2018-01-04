@@ -1,4 +1,4 @@
-import * as _ from '../array';
+import * as _ from '../src/array';
 
 test('set a element in a array position', () => {
     expect(_.set(2, 0, [1, 1, 1, 1, 1])).toEqual([1, 1, 0, 1, 1]);
