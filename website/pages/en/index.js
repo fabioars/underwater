@@ -147,7 +147,7 @@ const LearnHow = props => (
 
 const TryOut = props => (<div>
   <div id="try" className="productShowcaseSection paddingBottom">
-    <h2>{"Want to try it out?"}</h2>
+    <h2>{"Want to try it?"}</h2>
     <p>Try now</p>
     <script async src="//jsfiddle.net/tdvrwrj4/embed/js,html,result/"></script>
     </div>

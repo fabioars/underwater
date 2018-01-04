@@ -13,7 +13,7 @@ export const pop = arr => arr.slice(0, arr.length - 1);
 export const shift = arr => arr.slice(1);
 
 export const findAndReplace = (arr, item, callback) =>
-    arr.map((el, i) => callback(el, i, arr) ? item : el );
+    arr.map((el, i) => callback(el, item, i, arr) ? item : el );
 
 export const concat = (...arr) =>
     arr.reduce((prev, current) => [...prev, ...current]);

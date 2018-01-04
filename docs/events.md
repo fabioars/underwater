@@ -7,9 +7,9 @@ Event management functions
 
 Create a event managment object
 
- - events {object} : Where all events are registred
- - register {function}(key {string}, callback {function}) : Register a event
- - emmit {function}(key {string}, args {!any}) : Call all registred function with the key, `args` are opcional
+ - `events {object}` : Where all events are registred
+ - `register {function}(key {string}, callback {function})` : Register a event
+ - `emmit {function}(key {string}, args {!any})` : Call all registred function with the key, `args` are opcional
 
 ```
 const evts = _.createEventManager();
