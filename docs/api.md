@@ -1,8 +1,11 @@
 ---
 id: api
-title: API
+title: Reference
 ---
 
-Soon!
-<!-- This is a link to [another document.](/docs/en/getting-started.md) -->
-<!-- This is a link to an [external page.](http://www.example.com) -->
+See the references with examples
+
+ - [Array](array.html)
+ - [Collection](collection.html)
+ - [Events](events.html)
+ - [Number](number.html)
