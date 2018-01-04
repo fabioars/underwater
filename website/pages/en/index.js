@@ -145,17 +145,13 @@ const LearnHow = props => (
   </Block>
 );
 
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: 'Talk about trying this out',
-        image: imgUrl('drop.svg'),
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
+const TryOut = props => (<div>
+  <div id="try" className="productShowcaseSection paddingBottom">
+    <h2>{"Want to try it out?"}</h2>
+    <p>Try now</p>
+    <script async src="//jsfiddle.net/tdvrwrj4/embed/js,html,result/"></script>
+    </div>
+  </div>
 );
 
 const Description = props => (
@@ -212,7 +208,7 @@ class Index extends React.Component {
           <Features />
           {/* <FeatureCallout /> */}
           {/* <LearnHow /> */}
-          {/* <TryOut /> */}
+          <TryOut />
           {/* <Description /> */}
           <Showcase language={language} />
         </div>
