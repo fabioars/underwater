@@ -84,10 +84,37 @@ const newFruits = _.findAndReplace(fruits, 'apple', fruit => {
 // newFruits is ['banana', 'avocato', 'apple']
 ```
 # concat
-Soon!
+Concat many arrays you want
 
+ - `concat (...arr{array}) : {array}`
+
+```
+const fruits = _.concat(['banana', 'avocato',], ['pineapple']);
+
+// fruits is ['banana', 'avocato', 'pineapple']
+```
 # indexOf
-Soon!
+Find a index of element
 
+ - `indexOf (item{any}, arr{array}) : {number}`
+
+Return `-1` if not found
+
+```
+const fruits = ['banana', 'avocato', 'pineapple'];
+const i = _.indexOf('avocato', fruits);
+
+// i is 1
+```
 # difference
-Soon!
+Returns a array with the differents elements of two arrays
+
+ - `difference (arr{array}, values{array}) : {array}`
+
+```
+const itens = ['banana', 'house', 'apple', 'car'];
+const objects = ['car', 'house'];
+
+const fruits = _.difference(itens, objects);
+// fruits is ['banana', 'apple']
+```
