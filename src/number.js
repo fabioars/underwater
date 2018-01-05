@@ -1,16 +1,8 @@
-/**
- *
- * @param {array} input
- * @param {array} output
- */
+
 export const range = (input, output) => value =>
     output[0] +
     (value - input[0]) * (output[1] - output[0]) / (input[1] - input[0]);
 
-/**
- * FIXME: To use const
- * @param {array} pts
- */
 export const bezier = pts => {
     return t => {
         let a = pts,
@@ -27,32 +19,11 @@ export const bezier = pts => {
     };
 };
 
-/**
- *
- * @param {number} min
- * @param {number} max
- */
-export const random = (min, max) => Math.random() * (max - min) + min;
+export const random = (min, max, int = false) => {
+    const num = Math.random() * (max - min) + min;
+    return !int ? num : Math.floor(num);
+};
 
-/**
- *
- * @param {number} min
- * @param {number} max
- */
-export const randomInt = (min, max) => Math.floor(random(min, max));
+export const randomGenerator = (min, max) => (int = false) => random(min, max, int);
 
-/**
- *
- * @param {number} min
- * @param {number} max
- */
-export const randomGenerator = (min, max) => () => random(min, max);
-
-/**
- *
- * @param {number} value
- * @param {number} start
- * @param {number} end
- * @returns {boolean}
- */
 export const inRange = (value, start, end) => value >= start && value <= end;
