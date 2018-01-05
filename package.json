@@ -6,9 +6,11 @@
     "license": "MIT",
     "private": false,
     "scripts": {
-        "start": "webpack --progress -p -w",
+        "start": "concurrently \"yarn run webpack\" \"yarn run gulp\"",
+        "gulp": "gulp watch",
+        "webpack": "webpack --progress -p -w",
         "test": "jest --verbose",
-        "doc": "esdoc"
+        "precommit": "yarn run test"
     },
     "devDependencies": {
         "babel-core": "^6.26.0",
@@ -16,11 +18,11 @@
         "babel-loader": "^7.1.2",
         "babel-preset-latest": "^6.24.1",
         "babel-preset-stage-1": "^6.24.1",
-        "esdoc": "^1.0.4",
-        "esdoc-standard-plugin": "^1.0.0",
+        "concurrently": "^3.5.1",
         "eslint-plugin-jest": "^21.3.2",
         "gulp": "^3.9.1",
         "gulp-babel": "^7.0.0",
+        "husky": "^0.14.3",
         "jest": "^21.2.1",
         "webpack": "^3.9.1"
     }

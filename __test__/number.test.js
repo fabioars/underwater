@@ -22,7 +22,7 @@ test('generate a random number', () => {
 });
 
 test('generate a random integer', () => {
-    const num = _.randomInt(0, 10);
+    const num = _.random(0, 10, true);
 
     expect(num).toBeGreaterThanOrEqual(0);
     expect(num).toBeLessThanOrEqual(10);
