@@ -9,7 +9,7 @@ Set a element in a position and creates another array
 
  - `set (i {number}, item, {any}, arr {array}) : {array}`
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.set(1, 'apple', fruits);
 
@@ -22,7 +22,7 @@ Set a element in the end of the array
 
  - `push (item {any}, arr{array}) : {array}`
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.push('apple', fruits);
 
@@ -34,7 +34,7 @@ Set a element in the beginning of the array
 
  - `unshift (item {any}, arr{array}) : {array}`
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.unshift('apple', fruits);
 
@@ -47,7 +47,7 @@ Removes the last element of array
 
  - `pop (arr{array}) : {array}`
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.pop(fruits);
 
@@ -59,7 +59,7 @@ Removes the first element of array
 
  - `shift (arr{array}) : {array}`
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.shift(fruits);
 
@@ -74,7 +74,7 @@ Find and replace in array
 
 Callback needs to return a boolean
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const newFruits = _.findAndReplace(fruits, 'apple', fruit => {
     return fruit === 'pineapple';
@@ -88,7 +88,7 @@ Concat many arrays you want
 
  - `concat (...arr{array}) : {array}`
 
-```
+```js
 const fruits = _.concat(['banana', 'avocato',], ['pineapple']);
 
 // fruits is ['banana', 'avocato', 'pineapple']
@@ -100,7 +100,7 @@ Find a index of element
 
 Return `-1` if not found
 
-```
+```js
 const fruits = ['banana', 'avocato', 'pineapple'];
 const i = _.indexOf('avocato', fruits);
 
@@ -111,7 +111,7 @@ Returns a array with the differents elements of two arrays
 
  - `difference (arr{array}, values{array}) : {array}`
 
-```
+```js
 const itens = ['banana', 'house', 'apple', 'car'];
 const objects = ['car', 'house'];
 

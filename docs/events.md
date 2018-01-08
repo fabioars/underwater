@@ -11,7 +11,7 @@ Create a event managment object
  - `register {function}(key {string}, callback {function})` : Register a event
  - `emmit {function}(key {string}, args {!any})` : Call all registred function with the key, `args` are opcional
 
-```
+```js
 const evts = _.createEventManager();
 
 evts.register('user_registred', username => {
