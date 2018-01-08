@@ -12,9 +12,9 @@
 <li><code>register {function}(key {string}, callback {function})</code> : Register a event</li>
 <li><code>emmit {function}(key {string}, args {!any})</code> : Call all registred function with the key, <code>args</code> are opcional</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-keyword">const</span> evts = _.createEventManager();
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> evts = _.createEventManager();
 
-evts.register(<span class="hljs-string">'user_registred'</span>, <span class="hljs-function"><span class="hljs-params">username</span> =&gt;</span> {
+evts.register(<span class="hljs-string">'user_registred'</span>, username =&gt; {
     alert(<span class="hljs-string">`Thank you, <span class="hljs-subst">${username}</span>`</span>);
 });
 
