@@ -10,7 +10,7 @@ var forEach = exports.forEach = function forEach(collection, iteratee) {
     var isArray = collection.isArray && collection.isArray();
     if (isArray) {
         collection.forEach(function (value, key) {
-            iteratee(key, value, collection);
+            iteratee(parseInt(key), value, collection);
         });
     } else if ((typeof collection === 'undefined' ? 'undefined' : _typeof(collection)) === 'object') {
         for (var prop in collection) {
@@ -20,4 +20,14 @@ var forEach = exports.forEach = function forEach(collection, iteratee) {
         throw new Error('[forEach] do not support type ' + (typeof collection === 'undefined' ? 'undefined' : _typeof(collection)));
     }
     return collection;
+};
+
+var map = exports.map = function map(collection, iteratee) {
+    var result = [];
+
+    forEach(collection, function (key, value, collection) {
+        result.push(iteratee(value, key, collection));
+    });
+
+    return result;
 };
