@@ -51,3 +51,51 @@ test('map a object', () => {
     expect(m[1]).toBe('b:2');
     expect(m[2]).toBe('c:3');
 });
+
+test('find a object in a array', () => {
+    const arr = [
+        { id: 1, name: 'Fabio' },
+        { id: 2, name: 'Ingrid' },
+        { id: 3, name: 'Eddy' },
+    ];
+
+    const result = _.filter(arr, item => item.id === 1);
+
+    expect(result[0].name).toBe('Fabio');
+});
+
+test('can\'t find a object in a array', () => {
+    const arr = [
+        { id: 1, name: 'Fabio' },
+        { id: 2, name: 'Ingrid' },
+        { id: 3, name: 'Eddy' },
+    ];
+
+    const result = _.filter(arr, item => item.id === 5);
+
+    expect(result.length).toBe(0);
+});
+
+test('find a object in a object', () => {
+    const obj = {
+        user1: { id: 1, name: 'Fabio' },
+        user2: { id: 2, name: 'Ingrid' },
+        user3: { id: 3, name: 'Eddy' },
+    };
+
+    const result = _.filter(obj, item => item.id === 1);
+
+    expect(result[0].name).toBe('Fabio');
+});
+
+test('can\'t find a object in a object', () => {
+    const obj = {
+        user1: { id: 1, name: 'Fabio' },
+        user2: { id: 2, name: 'Ingrid' },
+        user3: { id: 3, name: 'Eddy' },
+    };
+
+    const result = _.filter(obj, item => item.id === 5);
+
+    expect(result.length).toBe(0);
+});

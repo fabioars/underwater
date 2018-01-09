@@ -31,3 +31,16 @@ var map = exports.map = function map(collection, iteratee) {
 
     return result;
 };
+
+var filter = exports.filter = function filter(collection, iteratee) {
+    var result = [];
+
+    forEach(collection, function (key, value) {
+        var isFound = iteratee(value, key, collection);
+        if (isFound) {
+            result.push(value);
+        }
+    });
+
+    return result;
+};

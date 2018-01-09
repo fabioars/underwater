@@ -41,3 +41,22 @@ const om = _.map(arr, (value, key) => {
 });
 // om is ['a:1', 'b:2', 'c:3']
 ```
+
+## filter
+
+Filter a collection
+
+ - `filter (arr{array}, iteratee{function}): {array}`
+ - `iteratee{function} (currentItem{any}, key{string|number}, collection{array|object}) : {bool}`
+
+```js
+const arr = [
+    { id: 1, name: 'Fabio' },
+    { id: 2, name: 'Ingrid' },
+    { id: 3, name: 'Eddy' },
+];
+
+const result = _.filter(arr, item => item.id === 1);
+
+// result is [{ id:1, name: 'Fabio'}]
+```

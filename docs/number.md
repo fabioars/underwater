@@ -5,7 +5,7 @@ title: Number
 
 Number manipulation functions
 
-# ranget
+# range
 Soon!
 # bezier
 Soon!

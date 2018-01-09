@@ -24,3 +24,15 @@ export const map = (collection, iteratee) => {
     return result;
 };
 
+export const filter = (collection, iteratee) => {
+    const result = [];
+
+    forEach(collection, (key, value) => {
+        const isFound = iteratee(value, key, collection);
+        if(isFound) {
+            result.push(value);
+        }
+    });
+
+    return result;
+};
