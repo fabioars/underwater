@@ -1,6 +1,6 @@
 import * as _ from '../src/array';
 
-test('set a element in a array position', () => {
+test('set an element in an array position', () => {
     expect(_.set(2, 0, [1, 1, 1, 1, 1])).toEqual([1, 1, 0, 1, 1]);
 });
 
@@ -20,7 +20,7 @@ test('remove first element of array', () => {
     expect(_.shift([1, 2, 3, 4])).toEqual([2, 3, 4]);
 });
 
-test('find and replace a element of array', () => {
+test('find and replace an element of array', () => {
     const result = _.findAndReplace([1, 2, 3, 2], 0, el => {
         return el === 2;
     });
@@ -42,7 +42,7 @@ test('merge 3 array', () => {
     expect(arr).toEqual([1, 2, 3]);
 });
 
-test('find position of a element of array', () => {
+test('find position of an element of array', () => {
     const result1 = _.indexOf(2, [12, 3, 5, 2, 15]);
     const result2 = _.indexOf(3, [0, 1, 2]);
     const result3 = _.indexOf(2, [1, 2, 1, 1, 2]);

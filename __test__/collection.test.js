@@ -15,7 +15,7 @@ test('for each to object properties', () => {
     expect(r).toEqual(obj);
 });
 
-test('for each a array', () => {
+test('for each an array', () => {
     const arr = [1, 2, 3, 4];
 
     const r = _.forEach(arr, (key, value) => {
@@ -26,7 +26,7 @@ test('for each a array', () => {
     expect(r).toEqual(arr);
 });
 
-test('map a array', () => {
+test('map an array', () => {
     const arr = [1, 2, 3, 4];
 
     const m = _.map(arr, (value, key) => {
@@ -40,7 +40,7 @@ test('map a array', () => {
     expect(m[3]).toBe('3:4');
 });
 
-test('map a object', () => {
+test('map an object', () => {
     const obj = { a: 1, b: 2, c: 3 };
 
     const m = _.map(obj, (value, key) => {
@@ -52,7 +52,7 @@ test('map a object', () => {
     expect(m[2]).toBe('c:3');
 });
 
-test('find a object in a array', () => {
+test('find an object in an array', () => {
     const arr = [
         { id: 1, name: 'Fabio' },
         { id: 2, name: 'Ingrid' },
@@ -64,7 +64,7 @@ test('find a object in a array', () => {
     expect(result[0].name).toBe('Fabio');
 });
 
-test('can\'t find a object in a array', () => {
+test('can\'t find an object in an array', () => {
     const arr = [
         { id: 1, name: 'Fabio' },
         { id: 2, name: 'Ingrid' },
@@ -76,7 +76,7 @@ test('can\'t find a object in a array', () => {
     expect(result.length).toBe(0);
 });
 
-test('find a object in a object', () => {
+test('find an object in an object', () => {
     const obj = {
         user1: { id: 1, name: 'Fabio' },
         user2: { id: 2, name: 'Ingrid' },
@@ -88,7 +88,7 @@ test('find a object in a object', () => {
     expect(result[0].name).toBe('Fabio');
 });
 
-test('can\'t find a object in a object', () => {
+test('can\'t find an object in an object', () => {
     const obj = {
         user1: { id: 1, name: 'Fabio' },
         user2: { id: 2, name: 'Ingrid' },

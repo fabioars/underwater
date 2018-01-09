@@ -1,12 +1,12 @@
 import * as _ from '../src/events';
 
-test('create a event manager', () => {
+test('create an event manager', () => {
     const e = _.createEventManager();
 
     expect(e).toBeDefined();
 });
 
-test('register a event', () => {
+test('register an event', () => {
     const e = _.createEventManager();
 
     e.register('my-event', () => []);
@@ -14,7 +14,7 @@ test('register a event', () => {
     expect(e.events.hasOwnProperty('my-event')).toBe(true);
 });
 
-test('emmit a event', () => {
+test('emmit an event', () => {
     const e = _.createEventManager();
 
     e.register('my-event', v => {
@@ -24,7 +24,7 @@ test('emmit a event', () => {
     e.emmit('my-event', 5);
 });
 
-test('emmit a event with arguments', () => {
+test('emmit an event with arguments', () => {
     const e = _.createEventManager();
 
     e.register('my-event', a => {
