@@ -46,6 +46,6 @@ test('bezier algorithm', () => {
 });
 
 test('check if value is in range', () => {
-    expect(_.inRange(5, 0, 10)).toBeTruthy();
-    expect(_.inRange(-5, 0, 10)).toBeFalsy();
+    expect(_.inRange(0, 10)(5)).toBe(true);
+    expect(_.inRange(0, 10)(-5)).toBe(false);
 });

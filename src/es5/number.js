@@ -27,19 +27,22 @@ var bezier = exports.bezier = function bezier(pts) {
 };
 
 var random = exports.random = function random(min, max) {
-    var int = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var isInt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
     var num = Math.random() * (max - min) + min;
-    return !int ? num : Math.floor(num);
+    return !isInt ? num : Math.floor(num);
 };
 
 var randomGenerator = exports.randomGenerator = function randomGenerator(min, max) {
+    var defaultInt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
     return function () {
-        var int = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-        return random(min, max, int);
+        var isInt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultInt;
+        return random(min, max, isInt);
     };
 };
 
-var inRange = exports.inRange = function inRange(value, start, end) {
-    return value >= start && value <= end;
+var inRange = exports.inRange = function inRange(start, end) {
+    return function (value) {
+        return value >= start && value <= end;
+    };
 };

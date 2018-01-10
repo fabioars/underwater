@@ -19,11 +19,11 @@ export const bezier = pts => {
     };
 };
 
-export const random = (min, max, int = false) => {
+export const random = (min, max, isInt = false) => {
     const num = Math.random() * (max - min) + min;
-    return !int ? num : Math.floor(num);
+    return !isInt ? num : Math.floor(num);
 };
 
-export const randomGenerator = (min, max) => (int = false) => random(min, max, int);
+export const randomGenerator = (min, max, defaultInt = false) => (isInt = defaultInt) => random(min, max, isInt);
 
-export const inRange = (value, start, end) => value >= start && value <= end;
+export const inRange = (start, end) => value => value >= start && value <= end;
