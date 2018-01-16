@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.createEventManager = undefined;
+exports.events = exports.createEventManager = undefined;
 
 var _array = require('./array');
 
@@ -31,3 +31,5 @@ var createEventManager = exports.createEventManager = function createEventManage
         }
     };
 };
+
+var events = exports.events = createEventManager();

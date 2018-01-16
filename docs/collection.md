@@ -5,21 +5,21 @@ title: Collection
 
 Collection manipulation functions
 
-## forEach
+## forEach or each
 
 Iterate through all elements of a collection
 
 ```js
 const obj = { a: '1', b: '2', c: '3' };
-_.forEach(obj, (key, value) => {
-    console.log(key, value);
+_.forEach(obj, (value, key) => {
+    console.log(value, key);
 });
 // a1, b2, c3
 
 
 const arr = ['a', 'b', 'c'];
-_.forEach(arr, (key, value) => {
-    console.log(key, value);
+_.each(arr, (value, key) => {
+    console.log(value, key);
 });
 // 0a, 1b, 3c
 ```

@@ -1,35 +1,61 @@
 import * as _ from '../src/events';
 
-test('create an event manager', () => {
+describe('event manager', () => {
     const e = _.createEventManager();
 
-    expect(e).toBeDefined();
-});
-
-test('register an event', () => {
-    const e = _.createEventManager();
-
-    e.register('my-event', () => []);
-
-    expect(e.events.hasOwnProperty('my-event')).toBe(true);
-});
-
-test('emmit an event', () => {
-    const e = _.createEventManager();
-
-    e.register('my-event', v => {
-        expect(v).toBe(5);
+    it('create an event manager', () => {
+        expect(e).toBeDefined();
+        expect(e.events).toBeDefined();
     });
 
-    e.emmit('my-event', 5);
-});
+    it('register an event', () => {
+        e.register('my-event', () => []);
 
-test('emmit an event with arguments', () => {
-    const e = _.createEventManager();
-
-    e.register('my-event', a => {
-        expect(a.value).toBe('the event was called');
+        expect(e.events.hasOwnProperty('my-event')).toBe(true);
     });
 
-    e.emmit('my-event', { value: 'the event was called' });
+    it('emmit an event', () => {
+        e.register('my-event-2', v => {
+            expect(v).toBe(5);
+        });
+
+        e.emmit('my-event-2', 5);
+    });
+
+    it('emmit an event with arguments', () => {
+        e.register('my-event-3', a => {
+            expect(a.value).toBe('the event was called');
+        });
+
+        e.emmit('my-event-3', { value: 'the event was called' });
+    });
+});
+
+describe('global events', () => {
+    it('create an event manager', () => {
+        expect(_.events).toBeDefined();
+        expect(_.events.events).toBeDefined();
+    });
+
+    it('register an event', () => {
+        _.events.register('my-event', () => []);
+
+        expect(_.events.events.hasOwnProperty('my-event')).toBe(true);
+    });
+
+    it('emmit an event', () => {
+        _.events.register('my-event-2', v => {
+            expect(v).toBe(5);
+        });
+
+        _.events.emmit('my-event-2', 5);
+    });
+
+    it('emmit an event with arguments', () => {
+        _.events.register('my-event-3', a => {
+            expect(a.value).toBe('the event was called');
+        });
+
+        _.events.emmit('my-event-3', { value: 'the event was called' });
+    });
 });

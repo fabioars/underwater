@@ -24,3 +24,5 @@ export const createEventManager = () => {
         }
     };
 };
+
+export const events = createEventManager();
