@@ -4,7 +4,7 @@ Lightweight ES6+ substitute to lodash and underscore.js
 
 [![GitHub package version](https://img.shields.io/github/package-json/v/fabioars/underwater.svg?style=for-the-badge)](https://github.com/fabioars/underwater)
 [![npm](https://img.shields.io/npm/dw/underwater.svg?style=for-the-badge)](https://www.npmjs.com/package/underwater)
-[![tests](https://img.shields.io/badge/tests-4%20%2F%204-green.svg?style=for-the-badge)](https://github.com/fabioars/underwater/tree/master/__test__)
+[![tests](https://img.shields.io/badge/tests-5%20%2F%205-green.svg?style=for-the-badge)](https://github.com/fabioars/underwater/tree/master/__test__)
 
 ## Share with friends
 
