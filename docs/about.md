@@ -4,7 +4,7 @@ title: About
 sidebar_label: About
 ---
 
-ightweight ES6+ substitute to lodash and underscore.js
+Lightweight ES6+ substitute to lodash and underscore.js
 
 ## Share with friends
 
@@ -15,3 +15,4 @@ Give us a star on GitHub and share with friends.
 - [Twitter](https://twitter.com/intent/tweet?text=Underwater.js&amp;url=https://github.com/fabioars/underwater)
 - [G+](https://plus.google.com/share?url=https://github.com/fabioars/underwater)
 - [LinkedIn](https://www.linkedin.com/shareArticle?url=https://github.com/fabioars/underwater&title=Underwater.js)
+

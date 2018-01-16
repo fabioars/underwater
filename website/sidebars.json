@@ -9,6 +9,7 @@
         "array",
         "collection",
         "events",
+        "functions",
         "number"
     ]
   }
