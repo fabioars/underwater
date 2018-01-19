@@ -55,3 +55,11 @@ test('find position of an element of array', () => {
 test('difference between arrays', () => {
     expect(_.difference([1, 2, 3], [1, 2])).toEqual([3]);
 });
+
+test('remove falsey values of array', () => {
+    expect(_.removeFalsey([0, 1, false, 2, '', 3, 'a']))
+        .toEqual([1, 2, 3, 'a']);
+
+    expect(_.removeFalsey(['e' * 23, NaN, 's', 34]))
+        .toEqual(['s', 34]);
+});

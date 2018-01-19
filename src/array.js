@@ -22,3 +22,5 @@ export const indexOf = (item, arr) =>
     arr.reduce((v, c, i) => (c === item && v === -1 ? i : v), -1);
 
 export const difference = (arr, values) => arr.filter(v => !values.includes(v));
+
+export const removeFalsey = arr => arr.filter(Boolean);

@@ -53,3 +53,7 @@ var difference = exports.difference = function difference(arr, values) {
         return !values.includes(v);
     });
 };
+
+var removeFalsey = exports.removeFalsey = function removeFalsey(arr) {
+    return arr.filter(Boolean);
+};

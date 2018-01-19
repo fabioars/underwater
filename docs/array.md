@@ -118,3 +118,13 @@ const objects = ['car', 'house'];
 const fruits = _.difference(itens, objects);
 // fruits is ['banana', 'apple']
 ```
+
+# removeFalsey
+Remove falsey values of array
+
+ - `removeFalsey (arr{array}) : {array}`
+
+```js
+const onlyTruly = _.removeFalsey([0, 1, false, 2, '', 3, 'a', NaN, undefined]);
+// onlyTruly is [1, 2, 3, 'a']
+```
