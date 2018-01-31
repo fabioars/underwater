@@ -23,3 +23,16 @@ evts.emmit('user_registred', 'Alex');
 
 ```
 
+## events
+
+Global events
+
+```js
+_.events.register('user_registred', username => {
+    alert(`Thank you, ${username}`);
+});
+
+_.events.emmit('user_registred', 'Alex');
+// alerts 'Thank you, Alex'
+
+```
