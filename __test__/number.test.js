@@ -49,3 +49,12 @@ test('check if value is in range', () => {
     expect(_.inRange(0, 10)(5)).toBe(true);
     expect(_.inRange(0, 10)(-5)).toBe(false);
 });
+
+test('make a string of a number with zeros on left', () => {
+   expect(_.zeroPad(5)).toBe('05');
+   expect(_.zeroPad(5, 3)).toBe('005');
+   expect(_.zeroPad(21)).toBe('21');
+   expect(_.zeroPad(21, 3)).toBe('021');
+   expect(_.zeroPad(123, 3)).toBe('123');
+   expect(_.zeroPad(123)).toBe('123');
+});

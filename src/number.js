@@ -27,3 +27,8 @@ export const random = (min, max, isInt = false) => {
 export const randomGenerator = (min, max, defaultInt = false) => (isInt = defaultInt) => random(min, max, isInt);
 
 export const inRange = (start, end) => value => value >= start && value <= end;
+
+export const zeroPad = (num, places = 2) => {
+    const zero = places - num.toString().length + 1;
+    return Array(+(zero > 0 && zero)).join('0') + num;
+};

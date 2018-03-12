@@ -1,7 +1,7 @@
 {
     "name": "underwater",
-    "version": "1.1.0",
-    "main": "src/index.js",
+    "version": "1.2.0",
+    "main": "src/es5/index.js",
     "author": "Fabio Soares <fabioars@live.com>",
     "license": "MIT",
     "private": false,

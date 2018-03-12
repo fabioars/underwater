@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -45,4 +45,11 @@ var inRange = exports.inRange = function inRange(start, end) {
     return function (value) {
         return value >= start && value <= end;
     };
+};
+
+var zeroPad = exports.zeroPad = function zeroPad(num) {
+    var places = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+
+    var zero = places - num.toString().length + 1;
+    return Array(+(zero > 0 && zero)).join('0') + num;
 };
