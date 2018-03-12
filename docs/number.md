@@ -72,3 +72,20 @@ const valid = rangeValidator(5);
 const notValid = rangeValidator(15);
 // notValid is false
 ```
+
+# zeroPad
+
+Adds zeros to the left of a number
+
+ - `zeroPad (number{number}, zeros{number} = 2) : {string}`
+
+```js
+_.zeroPad(2);
+// 02
+
+_.zeroPad(10);
+// 10
+
+_.zeroPad(10, 3);
+// 010
+```
