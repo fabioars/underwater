@@ -10,21 +10,36 @@
 <ul>
 <li><code>debounce = (callback{function}, wait{number}, immediate{boolean:false}) : {function}</code></li>
 </ul>
-<pre><code class="hljs css js">    <span class="hljs-keyword">const</span> onChange = _.debounce(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(e.target.value);
-    }, <span class="hljs-number">300</span>);
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> onChange = _.debounce(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(e.target.value);
+}, <span class="hljs-number">300</span>);
 
-    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#name-input'</span>).addEventListener(<span class="hljs-string">'change'</span>, onChange);
+<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#name-input'</span>).addEventListener(<span class="hljs-string">'change'</span>, onChange);
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" name="throttle"></a><a href="#throttle" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>throttle</h2>
 <p><img src="https://camo.qiitausercontent.com/421e7ab45d8b3826999afde1e4b3e0ef9dcde18e/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f36303332352f38303661383162642d623561362d323531632d616663352d3934363037346531616265652e676966" alt="Throttle Algorithm"></p>
 <ul>
 <li><code>throttle = (callback{function}, wait{number}, options{!object}) : {function}</code></li>
 </ul>
-<pre><code class="hljs css js">    <span class="hljs-keyword">const</span> onChange = _.throttle(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.innerWidth);
-    }, <span class="hljs-number">300</span>);
+<pre><code class="hljs css js"><span class="hljs-keyword">const</span> onChange = _.throttle(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.innerWidth);
+}, <span class="hljs-number">300</span>);
 
-    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, onChange);
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, onChange);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" name="once"></a><a href="#once" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>once</h2>
+<p>Generates a function that you can call it many times you want, but only executes once</p>
+<ul>
+<li><code>once = (callback{function}) : {function}</code></li>
+</ul>
+<pre><code class="hljs css js">
+<span class="hljs-keyword">const</span> double = <span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> d * d;
+};
+
+<span class="hljs-keyword">const</span> oneTimeDouble = _.once(double);
+
+oneTimeDouble(<span class="hljs-number">2</span>); <span class="hljs-comment">// returns 4</span>
+oneTimeDouble(<span class="hljs-number">2</span>); <span class="hljs-comment">// no return</span>
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="events.html">← Events</a><a class="docs-next button" href="number.html">Number →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/underwater/" class="nav-home"><img src="/underwater/img/drop.svg" alt="Underwater" width="66" height="58"/></a><div><h5>Docs</h5><a href="/underwater/docs/en/getting-started.html">Getting Started</a><a href="/underwater/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="/underwater/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://github.com/fabioars/underwater/issues">Issues</a></div><div><h5>More</h5><a href="/underwater/blog">Blog</a><a href="https://github.com/fabioars/underwater">GitHub</a><a class="github-button" href="https://github.com/fabioars/underwater" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">MIT 2018 Fabio Soares.</section></footer></div></body></html>
