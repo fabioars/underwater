@@ -18,8 +18,8 @@ export const findAndReplace = (arr, item, callback) =>
 export const concat = (...arr) =>
     arr.reduce((prev, current) => [...prev, ...current]);
 
-export const indexOf = (item, arr) =>
-    arr.reduce((v, c, i) => (c === item && v === -1 ? i : v), -1);
+export const indexOf = (arr, callback) =>
+    arr.reduce((v, c, i) => (callback(c, i) && v === -1 ? i : v), -1);
 
 export const difference = (arr, values) => arr.filter(v => !values.includes(v));
 

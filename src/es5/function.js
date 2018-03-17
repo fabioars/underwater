@@ -67,3 +67,18 @@ var throttle = exports.throttle = function throttle(callback, wait) {
         return state.result;
     };
 };
+
+var once = exports.once = function once(callback) {
+    var wasCalled = false;
+
+    return function () {
+        for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+            args[_key4] = arguments[_key4];
+        }
+
+        if (!wasCalled) {
+            wasCalled = true;
+            return callback(args);
+        }
+    };
+};

@@ -96,13 +96,15 @@ const fruits = _.concat(['banana', 'avocato',], ['pineapple']);
 # indexOf
 Find a index of element
 
- - `indexOf (item{any}, arr{array}) : {number}`
+ - `indexOf (arr{array}, callback{function}) : {number}`
 
 Return `-1` if not found
 
 ```js
 const fruits = ['banana', 'avocato', 'pineapple'];
-const i = _.indexOf('avocato', fruits);
+const i = _.indexOf(fruits, current => {
+    return current === 'avocato';
+});
 
 // i is 1
 ```

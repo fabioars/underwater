@@ -42,9 +42,9 @@ var concat = exports.concat = function concat() {
     });
 };
 
-var indexOf = exports.indexOf = function indexOf(item, arr) {
+var indexOf = exports.indexOf = function indexOf(arr, callback) {
     return arr.reduce(function (v, c, i) {
-        return c === item && v === -1 ? i : v;
+        return callback(c, i) && v === -1 ? i : v;
     }, -1);
 };
 

@@ -43,9 +43,17 @@ test('merge 3 array', () => {
 });
 
 test('find position of an element of array', () => {
-    const result1 = _.indexOf(2, [12, 3, 5, 2, 15]);
-    const result2 = _.indexOf(3, [0, 1, 2]);
-    const result3 = _.indexOf(2, [1, 2, 1, 1, 2]);
+    const result1 = _.indexOf([12, 3, 5, 2, 15], current => {
+        return current === 2;
+    });
+
+    const result2 = _.indexOf([0, 1, 2], current => {
+        return current === 3;
+    });
+
+    const result3 = _.indexOf([1, 2, 1, 1, 2], current => {
+        return current === 2;
+    });
 
     expect(result1).toBe(3);
     expect(result2).toBe(-1);

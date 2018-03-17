@@ -46,3 +46,14 @@ export const throttle = (callback, wait, options = {}) => {
         return state.result;
     };
 };
+
+export const once = callback => {
+    let wasCalled = false;
+
+    return (...args) => {
+        if (!wasCalled) {
+            wasCalled = true;
+            return callback(args);
+        }
+    };
+};

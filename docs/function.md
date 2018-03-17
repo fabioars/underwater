@@ -12,11 +12,11 @@ Function management functions
  - `debounce = (callback{function}, wait{number}, immediate{boolean:false}) : {function}`
 
 ```js
-    const onChange = _.debounce(e => {
-        console.log(e.target.value);
-    }, 300);
+const onChange = _.debounce(e => {
+    console.log(e.target.value);
+}, 300);
 
-    document.querySelector('#name-input').addEventListener('change', onChange);
+document.querySelector('#name-input').addEventListener('change', onChange);
 ```
 
 ## throttle
@@ -26,9 +26,27 @@ Function management functions
  - `throttle = (callback{function}, wait{number}, options{!object}) : {function}`
 
 ```js
-    const onChange = _.throttle(e => {
-        console.log(window.innerWidth);
-    }, 300);
+const onChange = _.throttle(e => {
+    console.log(window.innerWidth);
+}, 300);
 
-    window.addEventListener('resize', onChange);
+window.addEventListener('resize', onChange);
+```
+
+## once
+
+Generates a function that you can call it many times you want, but only executes once
+
+ - `once = (callback{function}) : {function}`
+
+```js
+
+const double = d => {
+    return d * d;
+};
+
+const oneTimeDouble = _.once(double);
+
+oneTimeDouble(2); // returns 4
+oneTimeDouble(2); // no return
 ```
