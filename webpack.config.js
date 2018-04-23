@@ -1,11 +1,13 @@
 const webpack = require('webpack');
+const { resolve } = require('path');
 
 const config = {
     entry: './src/index.js',
     output: {
-        path: __dirname,
-        filename: './dist/underwater.min.js',
-        library: '_'
+        path: resolve(__dirname, 'dist'),
+        filename: 'underwater.js',
+        library: '_',
+        libraryTarget: 'umd'
     },
     module: {
         rules: [

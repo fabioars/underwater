@@ -6,7 +6,7 @@ const source = ['./src/*.js', '!gulpfile.js', '!webpack.*.js'];
 gulp.task('build', () => {
     return gulp.src(source)
         .pipe(babel())
-        .pipe(gulp.dest('./src/es5'));
+        .pipe(gulp.dest('./lib'));
 });
 
 gulp.task('watch', ['build'], () => {
