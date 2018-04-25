@@ -26,6 +26,10 @@ test('for each an array', () => {
     expect(r).toEqual(arr);
 });
 
+it('should throw an error if non suported collection', () => {
+    expect(() => _.each('string', () => {})).toThrow();
+});
+
 test('map an array', () => {
     const arr = [1, 2, 3, 4];
 

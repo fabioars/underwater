@@ -1,5 +1,8 @@
 export const forEach = (collection, iteratee) => {
-    const isArray = collection.isArray && collection.isArray();
+    const isArray = collection.isArray
+        ? collection.isArray()
+        : Object.prototype.toString.call(collection) === '[object Array]';
+
     if (isArray) {
         collection.forEach((value, key) => {
             iteratee(value, parseInt(key), collection);
@@ -31,7 +34,7 @@ export const filter = (collection, iteratee) => {
 
     forEach(collection, (value, key) => {
         const isFound = iteratee(value, key, collection);
-        if(isFound) {
+        if (isFound) {
             result.push(value);
         }
     });
