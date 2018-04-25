@@ -1,33 +1,47 @@
 import * as _ from '../src/events';
 
-describe('event manager', () => {
-    const e = _.createEventManager();
+describe('Events', () => {
+    let e;
 
-    it('create an event manager', () => {
-        expect(e).toBeDefined();
-        expect(e.events).toBeDefined();
+    beforeEach(() => {
+        e = _.createEventManager();
     });
 
-    it('register an event', () => {
-        e.register('my-event', () => []);
-
-        expect(e.events.hasOwnProperty('my-event')).toBe(true);
-    });
-
-    it('emmit an event', () => {
-        e.register('my-event-2', v => {
-            expect(v).toBe(5);
+    describe('Smoke Tests', () => {
+        it('shoud create an event manager', () => {
+            expect(e).toBeDefined();
         });
 
-        e.emmit('my-event-2', 5);
+        it('should have a events property defined', () => {
+            expect(e.events).toBeDefined();
+        });
     });
 
-    it('emmit an event with arguments', () => {
-        e.register('my-event-3', a => {
-            expect(a.value).toBe('the event was called');
+    describe('Events Manager', () => {
+        it('should register an event', () => {
+            e.register('my-event', () => []);
+            expect(e.events.hasOwnProperty('my-event')).toBe(true);
         });
 
-        e.emmit('my-event-3', { value: 'the event was called' });
+        it('should emmit an event registered', () => {
+            const eventCallback = jest.fn();
+            e.register('my-event', eventCallback);
+            e.emmit('my-event');
+
+            expect(eventCallback.mock.calls.length).toBe(1);
+        });
+
+        it('should emmit an event with arguments', () => {
+            const eventCallback = jest.fn();
+            e.register('my-event', eventCallback);
+            e.emmit('my-event', { value: 'the event was called' });
+            expect(eventCallback.mock.calls[0][0].value).toBe('the event was called');
+        });
+
+        it('should throw an exception when emits a non existing event', () => {
+            expect(() => e.emmit('non-existing-event'))
+                .toThrow(/non-existing-event/);
+        });
     });
 });
 

@@ -13,7 +13,7 @@ export const createEventManager = () => {
         },
         emmit(key, args) {
             if (!this.events[key]) {
-                throw new Error(`[eventManager] there is any event register with the key ${key}`);
+                throw `[eventManager] there is any event register with the key '${key}'`;
             }
 
             this.events[key].forEach(event => {
