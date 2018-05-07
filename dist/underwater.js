@@ -146,94 +146,126 @@ var removeFalsey = exports.removeFalsey = function removeFalsey(arr) {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _array = __webpack_require__(0);
 
 Object.keys(_array).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _array[key];
-        }
-    });
-});
-Object.keys(_array).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _array[key];
-        }
-    });
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _array[key];
+    }
+  });
 });
 
-var _events = __webpack_require__(2);
-
-Object.keys(_events).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _events[key];
-        }
-    });
-});
-
-var _function = __webpack_require__(3);
-
-Object.keys(_function).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _function[key];
-        }
-    });
-});
-
-var _collection = __webpack_require__(4);
+var _collection = __webpack_require__(2);
 
 Object.keys(_collection).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _collection[key];
-        }
-    });
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _collection[key];
+    }
+  });
+});
+
+var _events = __webpack_require__(3);
+
+Object.keys(_events).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _events[key];
+    }
+  });
+});
+
+var _function = __webpack_require__(4);
+
+Object.keys(_function).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _function[key];
+    }
+  });
 });
 
 var _number = __webpack_require__(5);
 
 Object.keys(_number).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-        enumerable: true,
-        get: function get() {
-            return _number[key];
-        }
-    });
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _number[key];
+    }
+  });
 });
-
-var events = _interopRequireWildcard(_events);
-
-var functions = _interopRequireWildcard(_function);
-
-var collection = _interopRequireWildcard(_collection);
-
-var number = _interopRequireWildcard(_number);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-exports.default = _extends({}, events, functions, collection, number);
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var forEach = exports.forEach = function forEach(collection, iteratee) {
+    var isArray = collection.isArray ? collection.isArray() : Object.prototype.toString.call(collection) === '[object Array]';
+
+    if (isArray) {
+        collection.forEach(function (value, key) {
+            iteratee(value, parseInt(key), collection);
+        });
+    } else if ((typeof collection === 'undefined' ? 'undefined' : _typeof(collection)) === 'object') {
+        for (var prop in collection) {
+            iteratee(collection[prop], prop, collection);
+        }
+    } else {
+        throw new Error('[forEach] do not support type ' + (typeof collection === 'undefined' ? 'undefined' : _typeof(collection)));
+    }
+    return collection;
+};
+
+var each = exports.each = forEach;
+
+var map = exports.map = function map(collection, iteratee) {
+    var result = [];
+
+    forEach(collection, function (value, key, collection) {
+        result.push(iteratee(value, key, collection));
+    });
+
+    return result;
+};
+
+var filter = exports.filter = function filter(collection, iteratee) {
+    var result = [];
+
+    forEach(collection, function (value, key) {
+        var isFound = iteratee(value, key, collection);
+        if (isFound) {
+            result.push(value);
+        }
+    });
+
+    return result;
+};
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -259,7 +291,7 @@ var createEventManager = exports.createEventManager = function createEventManage
         },
         emmit: function emmit(key, args) {
             if (!this.events[key]) {
-                throw new Error('[eventManager] there is any event register with the key ' + key);
+                throw '[eventManager] there is any event register with the key \'' + key + '\'';
             }
 
             this.events[key].forEach(function (event) {
@@ -274,7 +306,7 @@ var createEventManager = exports.createEventManager = function createEventManage
 var events = exports.events = createEventManager();
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -361,60 +393,6 @@ var once = exports.once = function once(callback) {
             return callback(args);
         }
     };
-};
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var forEach = exports.forEach = function forEach(collection, iteratee) {
-    var isArray = collection.isArray && collection.isArray();
-    if (isArray) {
-        collection.forEach(function (value, key) {
-            iteratee(value, parseInt(key), collection);
-        });
-    } else if ((typeof collection === 'undefined' ? 'undefined' : _typeof(collection)) === 'object') {
-        for (var prop in collection) {
-            iteratee(collection[prop], prop, collection);
-        }
-    } else {
-        throw new Error('[forEach] do not support type ' + (typeof collection === 'undefined' ? 'undefined' : _typeof(collection)));
-    }
-    return collection;
-};
-
-var each = exports.each = forEach;
-
-var map = exports.map = function map(collection, iteratee) {
-    var result = [];
-
-    forEach(collection, function (value, key, collection) {
-        result.push(iteratee(value, key, collection));
-    });
-
-    return result;
-};
-
-var filter = exports.filter = function filter(collection, iteratee) {
-    var result = [];
-
-    forEach(collection, function (value, key) {
-        var isFound = iteratee(value, key, collection);
-        if (isFound) {
-            result.push(value);
-        }
-    });
-
-    return result;
 };
 
 /***/ }),
