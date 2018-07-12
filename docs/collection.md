@@ -60,3 +60,21 @@ const result = _.filter(arr, item => item.id === 1);
 
 // result is [{ id:1, name: 'Fabio'}]
 ```
+
+## reduce
+
+Reduce a collection
+
+ - `reduce (collection, iteratee{function}, initial{any}): {array}`
+ - `iteratee{function} (lastValue{any}, currentItem{any}, key{string|number}, collection{array|object}) : {any}`
+
+```js
+const obj = {
+    'prop-1': 2,
+    'prop-3': 4,
+    'prop-5': 6
+};
+    
+const result = _.reduce(obj, (subtotal, current) => subtotal + current, 0);
+// result is 12
+```
