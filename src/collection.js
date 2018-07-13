@@ -1,7 +1,5 @@
 export const forEach = (collection, iteratee) => {
-    const isArray = collection.isArray
-        ? collection.isArray()
-        : Object.prototype.toString.call(collection) === '[object Array]';
+    const isArray = Object.prototype.toString.call(collection) === '[object Array]';
 
     if (isArray) {
         collection.forEach((value, key) => {
