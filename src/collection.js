@@ -39,3 +39,14 @@ export const filter = (collection, iteratee) => {
 
     return result;
 };
+
+
+export const reduce = (collection, iteratee, initial = null) => {
+    let reduced = initial;
+
+    forEach(collection, (value, key) => {
+        reduced = iteratee(reduced, value, key, collection);
+    });
+
+    return reduced;
+}
