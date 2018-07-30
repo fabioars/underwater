@@ -138,6 +138,10 @@ var removeFalsey = exports.removeFalsey = function removeFalsey(arr) {
     return arr.filter(Boolean);
 };
 
+var slide = exports.slide = function slide(arr, start, end) {
+    return [].concat(_toConsumableArray(arr)).slice(start, end);
+};
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {

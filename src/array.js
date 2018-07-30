@@ -24,3 +24,5 @@ export const indexOf = (arr, callback) =>
 export const difference = (arr, values) => arr.filter(v => !values.includes(v));
 
 export const removeFalsey = arr => arr.filter(Boolean);
+
+export const slide = (arr, start, end) => [...arr].slice(start, end);
