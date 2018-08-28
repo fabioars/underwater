@@ -2,7 +2,7 @@
 
 Lightweight ES6+ substitute to lodash and underscore.js
 
-[![Build Status](https://travis-ci.org/fabioars/underwater.svg?branch=master)](https://travis-ci.org/fabioars/underwater)
+[![CircleCI](https://img.shields.io/circleci/project/fabioars/underwater/node-csgo-parser.svg)](https://github.com/fabioars/underwater)
 [![npm](https://img.shields.io/npm/dm/localeval.svg)](https://github.com/fabioars/underwater)
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/fabioars/underwater)
 
