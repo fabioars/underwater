@@ -28,7 +28,7 @@
         "babel-loader": "^7.1.2",
         "babel-preset-latest": "^6.24.1",
         "babel-preset-stage-1": "^6.24.1",
-        "eslint-plugin-jest": "^21.3.2",
+        "eslint-plugin-jest": "^22.7.0",
         "gulp": "^3.9.1",
         "gulp-babel": "^7.0.0",
         "husky": "^0.14.3",
